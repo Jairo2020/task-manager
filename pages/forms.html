@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Crear Tarea</title>
+    <link rel="stylesheet" href="../styles/forms.css">
+</head>
+
+<body>
+    <h2>Crear Nueva Tarea</h2>
+    <a href="../index.html">Volver a la lista de tareas</a>
+    <p>Complete el siguiente formulario para crear una nueva tarea:</p>
+    <form>
+        <label for="titulo">Título</label>
+        <input type="text" id="titulo" name="titulo" required>
+
+        <label for="descripcion">Descripción</label>
+        <textarea id="descripcion" name="descripcion" rows="4" required></textarea>
+
+        <label for="fecha">Fecha de vencimiento</label>
+        <input type="date" id="fecha" name="fecha" required>
+
+        <label for="prioridad">Prioridad</label>
+        <select id="prioridad" name="prioridad" required>
+            <option value="">Seleccione</option>
+            <option value="alta">Alta</option>
+            <option value="media">Media</option>
+            <option value="baja">Baja</option>
+        </select>
+
+        <button type="submit">Crear Tarea</button>
+    </form>
+</body>
+
+</html>

@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Task Manager</title>
+  <link rel="stylesheet" href="styles/styles.css" />
+</head>
+
+<body>
+  <header>
+    <h1>Gestión de tareas para jóvenes universitarios</h1>
+  </header>
+
+  <div class="container">
+    <button> <a href="pages/forms.html">Crear Nueva Tarea</a></button>
+
+
+    <h2>Lista de tareas</h2>
+    <ol id="taskList">
+    </ol>
+
+    <h2>Resumen de horas (Gráfico de barras)</h2>
+    <canvas id="hoursChart" width="600" height="400"></canvas>
+  </div>
+
+  <!-- Chart.js CDN -->
+  <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+  <script src="js/graph.js"></script>
+  <script src="js/scripts.js"></script>
+  <script src="js/forms.js"></script>
+</body>
+
+</html>
