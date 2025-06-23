@@ -2,34 +2,76 @@
 <html lang="es">
 
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>Task Manager</title>
-  <link rel="stylesheet" href="styles/styles.css" />
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Task Manager</title>
+    <link rel="stylesheet" href="styles/styles.css" />
 </head>
 
 <body>
-  <header>
-    <h1>Gestión de tareas para jóvenes universitarios</h1>
-  </header>
+    <header>
+        <h1>Gestión de tareas para jóvenes universitarios</h1>
+    </header>
 
-  <div class="container">
-    <button> <a href="pages/forms.html">Crear Nueva Tarea</a></button>
+    <div class="container">
+        <div class="actions-bar">
+            <button class="primary-button" onclick="window.location.href='pages/forms.html'">
+                <span class="icon">➕</span> Crear Nueva Tarea
+            </button>
+            <button class="secondary-button" id="filterButton">
+                <span class="icon">🔍</span> Filtrar
+            </button>
+        </div>
 
+        <div id="filterOptions" class="filter-panel">
+            <h3>Filtrar tareas</h3>
+            <div class="filter-group">
+                <label>Estado:</label>
+                <select id="filterStatus">
+                    <option value="all">Todas</option>
+                    <option value="pending">Pendientes</option>
+                    <option value="completed">Completadas</option>
+                </select>
+            </div>
+            <div class="filter-group">
+                <label>Prioridad:</label>
+                <select id="filterPriority">
+                    <option value="all">Todas</option>
+                    <option value="alta">Alta</option>
+                    <option value="media">Media</option>
+                    <option value="baja">Baja</option>
+                </select>
+            </div>
+            <button id="applyFilters" class="primary-button">Aplicar</button>
+            <button id="resetFilters" class="secondary-button">Restablecer</button>
+        </div>
 
-    <h2>Lista de tareas</h2>
-    <ol id="taskList">
-    </ol>
+        <h2>Lista de tareas</h2>
+        <ol id="taskList" class="task-list">
+            <!-- Las tareas se cargarán dinámicamente aquí -->
+        </ol>
 
-    <h2>Resumen de horas (Gráfico de barras)</h2>
-    <canvas id="hoursChart" width="600" height="400"></canvas>
-  </div>
+        <div class="dashboard">
+            <h2>Estadísticas de tareas</h2>
+            <div id="taskStats" class="stats-container">
+                <!-- Las estadísticas se cargarán dinámicamente aquí -->
+            </div>
 
-  <!-- Chart.js CDN -->
-  <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
-  <script src="js/graph.js"></script>
-  <script src="js/scripts.js"></script>
-  <script src="js/forms.js"></script>
+            <h2>Resumen de horas (Gráfico de barras)</h2>
+            <div class="chart-container">
+                <canvas id="hoursChart" width="600" height="400"></canvas>
+            </div>
+        </div>
+    </div>
+
+    <footer>
+        <p>© 2025 Task Manager - Aplicación para la gestión eficiente de tareas</p>
+    </footer>
+
+    <!-- Chart.js CDN -->
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <script src="js/graph.js"></script>
+    <script src="js/scripts.js"></script>
 </body>
 
 </html>

@@ -8,29 +8,57 @@
 </head>
 
 <body>
-    <h2>Crear Nueva Tarea</h2>
+    <h2 id="formTitle">Crear Nueva Tarea</h2>
     <a href="../index.html">Volver a la lista de tareas</a>
-    <p>Complete el siguiente formulario para crear una nueva tarea:</p>
-    <form>
-        <label for="titulo">Título</label>
-        <input type="text" id="titulo" name="titulo" required>
+    <p>Complete el siguiente formulario para gestionar sus tareas:</p>
+    <form id="taskForm">
+        <input type="hidden" id="taskId" name="taskId">
 
-        <label for="descripcion">Descripción</label>
-        <textarea id="descripcion" name="descripcion" rows="4" required></textarea>
+        <div class="form-group">
+            <label for="titulo">Título</label>
+            <input type="text" id="titulo" name="titulo" required>
+        </div>
 
-        <label for="fecha">Fecha de vencimiento</label>
-        <input type="date" id="fecha" name="fecha" required>
+        <div class="form-group">
+            <label for="descripcion">Descripción</label>
+            <textarea id="descripcion" name="descripcion" rows="4" required></textarea>
+        </div>
 
-        <label for="prioridad">Prioridad</label>
-        <select id="prioridad" name="prioridad" required>
-            <option value="">Seleccione</option>
-            <option value="alta">Alta</option>
-            <option value="media">Media</option>
-            <option value="baja">Baja</option>
-        </select>
+        <div class="form-group">
+            <label for="fecha">Fecha de vencimiento</label>
+            <input type="date" id="fecha" name="fecha" required>
+        </div>
 
-        <button type="submit">Crear Tarea</button>
+        <div class="form-group">
+            <label for="horas">Horas estimadas</label>
+            <div class="hour-controls">
+                <input type="number" id="horas" name="horas" min="0.5" step="0.5" value="1" required>
+            </div>
+        </div>
+
+        <div class="form-group">
+            <label for="prioridad">Prioridad</label>
+            <select id="prioridad" name="prioridad" required>
+                <option value="">Seleccione</option>
+                <option value="alta">Alta</option>
+                <option value="media">Media</option>
+                <option value="baja">Baja</option>
+            </select>
+        </div>
+
+        <div class="form-group" id="completadoGroup">
+            <label for="completado">Estado</label>
+            <select id="completado" name="completado">
+                <option value="false">Pendiente</option>
+                <option value="true">Completado</option>
+            </select>
+        </div>
+
+        <button type="submit" id="submitBtn">Crear Tarea</button>
+        <button type="button" id="cancelBtn" style="background-color: #6c757d; margin-top: 10px;">Cancelar</button>
     </form>
+
+    <script src="../js/forms.js"></script>
 </body>
 
 </html>
